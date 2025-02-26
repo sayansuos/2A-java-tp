@@ -102,9 +102,12 @@ public class Password {
      */
     public static HashMap<String, Boolean> checkPasswordsList(ArrayList<String> passwords) {
 
-        // Code here
+        HashMap<String, Boolean> pwd_hashmap = new HashMap<>();
+        for (String pwd: passwords){
+            pwd_hashmap.put(hashPassword(pwd), isStrongPassword(pwd));
+        }
 
-        return null;
+        return pwd_hashmap;
     }
 
     /**
