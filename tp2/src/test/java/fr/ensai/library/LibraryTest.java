@@ -13,7 +13,7 @@ class LibraryTest {
     void findActiveLoanForItem_ItemIsLoaned() {
         // GIVEN
         Library library = new Library("Test Library");
-        Book book1 = new Book("978-0321765723", "Book 1", new Author("Author 1"), 2008, 320);
+        Book book1 = new Book("978-0321765723", "Book 1", new Author("Author1"), 2008, 320);
         Student student = new Student("John Doe", 20, 2, true);
         Loan loan1 = new Loan(book1, student, new Date());
         library.getActiveLoans().add(loan1);
@@ -29,8 +29,8 @@ class LibraryTest {
     void findActiveLoanForItem_ItemIsNotLoaned() {
         // GIVEN
         Library library = new Library("Test Library");
-        Book book1 = new Book("978-0321765723", "Book 1", new Author("Author 1"), 2008, 320);
-        Book book2 = new Book("978-0596009205", "Book 2", new Author("Author 2"), 2005, 450);
+        Book book1 = new Book("978-0321765723", "Book 1", new Author("Author1"), 2008, 320);
+        Book book2 = new Book("978-0596009205", "Book 2", new Author("Author2"), 2005, 450);
         Student student = new Student("John Doe", 20, 2, true);
         Loan loan1 = new Loan(book1, student, new Date());
         library.getActiveLoans().add(loan1);
@@ -41,5 +41,4 @@ class LibraryTest {
         // THEN
         assertNull(foundLoan);
     }
-
 }
